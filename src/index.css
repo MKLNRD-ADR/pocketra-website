@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0a0f0c;
+  --color-bg-soft: #0e140d;
+  --color-card: #121c14;
+  --color-card-border: #1c2a1d;
+  --color-pocket-green: #3ddc84;
+  --color-pocket-green-dim: #1f4a30;
+  --color-pocket-blue: #5b8def;
+  --color-pocket-gold: #f0c43d;
+  --color-pocket-red: #ef6f6f;
+  --color-pocket-purple: #a07cf0;
+  --color-pocket-orange: #f0954a;
+  --color-text: #eef5ef;
+  --color-text-soft: #9aab9d;
+  --color-text-faint: #5f6f63;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.02em; }
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--color-pocket-green);
+  outline-offset: 3px;
+}
