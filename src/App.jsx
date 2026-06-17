@@ -195,11 +195,11 @@ function FeatureShowcase({ step, tag, title, desc, image, imagePosition, reverse
       </div>
       <div className={reverse ? 'sm:order-1' : ''}>
         <div className="w-[230px] mx-auto rounded-[30px] border border-card-border bg-[#060a06] p-2.5 shadow-[0_30px_60px_-25px_rgba(61,220,132,0.15)] transition-transform hover:-translate-y-1">
-          <div className="rounded-[22px] overflow-hidden h-[400px]">
+          <div className="rounded-[22px] overflow-hidden bg-[#060a06]">
             <img
               src={image}
               alt={title}
-              className="w-full h-full object-cover"
+              className="w-full h-auto"
               style={{ objectPosition: imagePosition }}
             />
           </div>
