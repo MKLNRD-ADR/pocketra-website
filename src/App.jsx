@@ -1,7 +1,8 @@
 import heroImage from './assets/hero.jpg';
+import addMoneyImage from './assets/hero.jpg';
 import addSectionImage from './assets/hero.jpg';
-import balanceCardImage from './assets/hero.jpg';
-import pocketsGridImage from './assets/hero.jpg';
+import addExpenseImage from './assets/hero.jpg';
+import spendHistoryImage from './assets/hero.jpg';
 
 const pockets = [
   { name: 'Savings', amount: 'PHP 18,000', accent: 'var(--color-pocket-green)' },
@@ -18,26 +19,47 @@ const stats = [
 
 const features = [
   {
-    tag: 'No limit',
-    title: 'Unlimited sections',
-    desc: 'Split your balance into as many named pockets as you need. Name it, set a budget, pick a color - it lives inside your existing balance, not separate from it.',
+    step: '01',
+    tag: 'Your wallet',
+    title: 'See everything at a glance',
+    desc: 'Total money, every pocket, and your most recent spend, all on one screen the moment you open the app.',
+    image: heroImage,
+    imagePosition: 'center',
+    reverse: false,
+  },
+  {
+    step: '02',
+    tag: 'Add money',
+    title: 'Top up, with context',
+    desc: "Add to your total balance and label what it's for, so every peso has a reason, not just a number.",
+    image: addMoneyImage,
+    imagePosition: 'center',
+    reverse: true,
+  },
+  {
+    step: '03',
+    tag: 'Create a pocket',
+    title: 'Set money aside, without setting it apart',
+    desc: 'Name the pocket and set its budget. It stays part of your real balance the whole time.',
     image: addSectionImage,
     imagePosition: 'center',
     reverse: false,
   },
   {
-    tag: 'Updates instantly',
-    title: 'Real-time totals',
-    desc: 'Remaining balance and total spent update instantly the moment you log an expense - across your wallet and every pocket.',
-    image: balanceCardImage,
+    step: '04',
+    tag: 'Log an expense',
+    title: 'Record what you spent',
+    desc: 'Pick the pocket it came from and log the amount, right when it happens.',
+    image: addExpenseImage,
     imagePosition: 'center',
     reverse: true,
   },
   {
-    tag: 'Tied to one pocket',
-    title: 'Per-section logging',
-    desc: 'Log an expense against a specific pocket, not just your balance as a whole. Every pocket keeps its own running total and history.',
-    image: pocketsGridImage,
+    step: '05',
+    tag: 'Watch it update',
+    title: 'The pocket updates instantly',
+    desc: "That pocket's remaining total drops immediately, with a running list of everything logged against it.",
+    image: spendHistoryImage,
     imagePosition: 'center',
     reverse: false,
   },
@@ -160,11 +182,14 @@ function HowItWorks() {
   );
 }
 
-function FeatureShowcase({ tag, title, desc, image, imagePosition, reverse }) {
+function FeatureShowcase({ step, tag, title, desc, image, imagePosition, reverse }) {
   return (
     <div className="grid sm:grid-cols-2 gap-10 items-center py-14 border-b border-card-border">
       <div className={reverse ? 'sm:order-2' : ''}>
-        <p className="font-mono text-xs uppercase tracking-widest text-pocket-green mb-3">{tag}</p>
+        <div className="flex items-center gap-3 mb-3">
+          <span className="font-mono text-xs text-text-faint">{step}</span>
+          <p className="font-mono text-xs uppercase tracking-widest text-pocket-green">{tag}</p>
+        </div>
         <h3 className="font-semibold text-2xl mb-3">{title}</h3>
         <p className="text-text-soft">{desc}</p>
       </div>
@@ -188,12 +213,12 @@ function Features() {
   return (
     <section id="features" className="max-w-5xl mx-auto px-6 sm:px-10 py-24">
       <div className="text-center mb-4 max-w-xl mx-auto">
-        <p className="font-mono text-xs uppercase tracking-widest text-pocket-green mb-4">What it tracks</p>
-        <h2 className="font-semibold text-3xl sm:text-4xl">Every pocket, accounted for</h2>
+        <p className="font-mono text-xs uppercase tracking-widest text-pocket-green mb-4">How it actually works</p>
+        <h2 className="font-semibold text-3xl sm:text-4xl">From wallet to pocket, in five steps</h2>
       </div>
       <div>
         {features.map((f) => (
-          <FeatureShowcase key={f.title} {...f} />
+          <FeatureShowcase key={f.step} {...f} />
         ))}
       </div>
     </section>
