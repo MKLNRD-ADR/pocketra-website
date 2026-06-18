@@ -1,8 +1,8 @@
 import heroImage from './assets/hero.jpg';
-import addMoneyImage from './assets/hero.jpg';
-import addSectionImage from './assets/hero.jpg';
-import addExpenseImage from './assets/hero.jpg';
-import spendHistoryImage from './assets/hero.jpg';
+import addMoneyImage from './assets/secondstep.jpg';
+import addSectionImage from './assets/thirdstep.jpg';
+import addExpenseImage from './assets/fourthstep.jpg';
+import spendHistoryImage from './assets/fifthstep.jpg';
 
 const pockets = [
   { name: 'Savings', amount: 'PHP 18,000', accent: 'var(--color-pocket-green)' },
