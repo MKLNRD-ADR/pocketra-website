@@ -235,7 +235,10 @@ function Download() {
         <h2 className="font-semibold text-3xl mb-3">Get Pocketra</h2>
         <p className="text-text-soft mb-8">Start splitting your balance into pockets today. Free to use.</p>
         <div className="flex flex-wrap gap-4 justify-center mb-5">
-          <a href="#" className="flex flex-col items-start rounded-2xl border border-card-border bg-bg-soft px-6 py-3 min-w-[160px] hover:border-pocket-green transition">
+          <a href="https://github.com/MKLNRD-ADR/pocketra/releases/latest/download/pocketra.apk"
+            download
+            className="flex flex-col items-start rounded-2xl border border-card-border bg-bg-soft px-6 py-3 min-w-[160px] hover:border-pocket-green transition"
+          >
             <span className="text-[11px] text-text-faint">Download for</span>
             <span className="font-semibold text-lg">Android</span>
           </a>
