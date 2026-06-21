@@ -87,17 +87,17 @@ function Navbar() {
 
 function Hero() {
   return (
-    <section className="pb-8">
-      <div className="max-w-6xl mx-auto px-6 sm:px-10 pt-16 pb-8">
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+    <section className="pb-8 overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6 sm:px-10 pt-10 sm:pt-16 pb-8">
+        <div className="grid md:grid-cols-2 gap-10 items-center mb-10 sm:mb-16">
           <div>
             <p className="font-mono text-xs uppercase tracking-widest text-pocket-green mb-4">
               Personal finance, reorganized
             </p>
-            <h1 className="font-semibold text-5xl sm:text-6xl lg:text-7xl leading-[1.08] mb-6">
+            <h1 className="font-semibold text-4xl sm:text-6xl lg:text-7xl leading-[1.08] mb-6">
               One balance.<br />As many pockets as you need.
             </h1>
-            <p className="text-text-soft text-base sm:text-lg max-w-md mb-8">
+            <p className="text-text-soft text-sm sm:text-base lg:text-lg max-w-md mb-8">
               Pocketra lets you divide your money into sections - allowance, savings, bills -
               without ever moving it out of your real balance. Spend from a pocket, and your
               total updates instantly.
@@ -111,15 +111,15 @@ function Hero() {
               </a>
             </div>
           </div>
-          <div className="flex justify-center relative">
-            <div className="absolute w-72 h-72 bg-pocket-green/20 rounded-full blur-3xl -z-10" />
-            <div className="w-[340px] rounded-[36px] border border-card-border bg-[#060a06] p-3 shadow-[0_40px_80px_-30px_rgba(61,220,132,0.18)]">
+          <div className="flex justify-center relative mt-6 md:mt-0">
+            <div className="absolute w-64 h-64 sm:w-72 sm:h-72 bg-pocket-green/20 rounded-full blur-3xl -z-10" />
+            <div className="w-full max-w-[300px] sm:max-w-[340px] rounded-[36px] border border-card-border bg-[#060a06] p-3 shadow-[0_40px_80px_-30px_rgba(61,220,132,0.18)]">
               <img src={heroImage} alt="Pocketra wallet screen" className="rounded-[26px] w-full" />
             </div>
           </div>
         </div>
 
-        <div className="flex justify-between border-t border-card-border pt-8">
+        <div className="flex flex-wrap gap-6 sm:justify-between border-t border-card-border pt-8">
           {stats.map((s) => (
             <div key={s.label}>
               <p className="font-mono text-lg text-pocket-green mb-1">{s.value}</p>
@@ -134,45 +134,45 @@ function Hero() {
 
 function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-24 text-center">
+    <section id="how-it-works" className="py-16 sm:py-24 text-center">
       <div className="max-w-6xl mx-auto px-6 sm:px-10">
         <p className="font-mono text-xs uppercase tracking-widest text-pocket-green mb-4">How sections work</p>
-        <h2 className="font-semibold text-4xl sm:text-5xl lg:text-6xl max-w-3xl mx-auto mb-6">
+        <h2 className="font-semibold text-3xl sm:text-5xl lg:text-6xl max-w-3xl mx-auto mb-6">
           Your balance stays whole. Your plans stay separate.
         </h2>
-        <p className="text-text-soft text-lg max-w-2xl mx-auto mb-16">
+        <p className="text-text-soft text-base sm:text-lg max-w-2xl mx-auto mb-10 sm:mb-16">
           Create a pocket for anything - a trip, a bill, pocket money for the week. Pocketra
           reserves the amount without ever pulling it out of your wallet.
         </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-8 mb-16">
-          <div className="rounded-3xl border border-pocket-green bg-card px-10 py-8">
+        <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-6 sm:gap-8 mb-10 sm:mb-16">
+          <div className="rounded-3xl border border-pocket-green bg-card px-10 py-8 w-full sm:w-auto max-w-xs">
             <p className="text-sm text-text-faint mb-1">Total Balance</p>
             <p className="font-mono text-2xl text-pocket-green">PHP 28,302.00</p>
           </div>
           <div className="h-px w-16 bg-gradient-to-r from-pocket-green to-card-border hidden sm:block" />
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-3 sm:gap-4 justify-center w-full sm:w-auto">
             {pockets.map((p) => (
               <div
                 key={p.name}
-                className="text-left rounded-2xl border border-card-border bg-card px-6 py-5 min-w-[150px]"
+                className="text-left rounded-2xl border border-card-border bg-card px-4 sm:px-6 py-4 sm:py-5"
                 style={{ borderTopColor: p.accent, borderTopWidth: '3px' }}
               >
-                <p className="text-base mb-1">{p.name}</p>
-                <p className="font-mono text-base text-text-soft">{p.amount}</p>
+                <p className="text-sm sm:text-base mb-1">{p.name}</p>
+                <p className="font-mono text-sm sm:text-base text-text-soft">{p.amount}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-6 mx-auto text-left">
-          <div className="rounded-3xl border border-card-border bg-bg-soft p-8">
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mx-auto text-left">
+          <div className="rounded-3xl border border-card-border bg-bg-soft p-6 sm:p-8">
             <h3 className="font-semibold text-xl mb-3">Create a pocket</h3>
             <p className="text-text-soft">
               Name it, set a budget, pick a color. It lives inside your existing balance, not separate from it.
             </p>
           </div>
-          <div className="rounded-3xl border border-card-border bg-bg-soft p-8">
+          <div className="rounded-3xl border border-card-border bg-bg-soft p-6 sm:p-8">
             <h3 className="font-semibold text-xl mb-3">Spend from it</h3>
             <p className="text-text-soft">
               Log an expense against that pocket. Your remaining balance and the pocket's total update together, in real time.
@@ -186,17 +186,17 @@ function HowItWorks() {
 
 function FeatureShowcase({ step, tag, title, desc, image, imagePosition, reverse }) {
   return (
-    <div className="grid sm:grid-cols-2 gap-16 items-center py-20 border-b border-card-border">
+    <div className="grid sm:grid-cols-2 gap-10 sm:gap-16 items-center py-14 sm:py-20 border-b border-card-border">
       <div className={reverse ? 'sm:order-2' : ''}>
         <div className="flex items-center gap-3 mb-4">
           <span className="font-mono text-sm text-text-faint">{step}</span>
           <p className="font-mono text-sm uppercase tracking-widest text-pocket-green">{tag}</p>
         </div>
-        <h3 className="font-semibold text-4xl mb-4">{title}</h3>
-        <p className="text-text-soft text-xl leading-relaxed">{desc}</p>
+        <h3 className="font-semibold text-2xl sm:text-4xl mb-4">{title}</h3>
+        <p className="text-text-soft text-base sm:text-xl leading-relaxed">{desc}</p>
       </div>
       <div className={reverse ? 'sm:order-1' : ''}>
-        <div className="w-[320px] mx-auto rounded-[36px] border border-card-border bg-[#060a06] p-3 shadow-[0_30px_60px_-25px_rgba(61,220,132,0.15)] transition-transform hover:-translate-y-1">
+        <div className="w-full max-w-[260px] sm:max-w-[320px] mx-auto rounded-[36px] border border-card-border bg-[#060a06] p-3 shadow-[0_30px_60px_-25px_rgba(61,220,132,0.15)] transition-transform hover:-translate-y-1">
           <div className="rounded-[28px] overflow-hidden bg-[#060a06]">
             <img
               src={image}
@@ -213,11 +213,11 @@ function FeatureShowcase({ step, tag, title, desc, image, imagePosition, reverse
 
 function Features() {
   return (
-    <section id="features" className="py-24">
+    <section id="features" className="py-16 sm:py-24">
       <div className="max-w-6xl mx-auto px-6 sm:px-10">
-        <div className="text-center mb-16 mx-auto">
+        <div className="text-center mb-10 sm:mb-16 mx-auto">
           <p className="font-mono text-sm uppercase tracking-widest text-pocket-green mb-4">How it actually works</p>
-          <h2 className="font-semibold text-4xl sm:text-5xl lg:text-6xl">From wallet to pocket, in five steps</h2>
+          <h2 className="font-semibold text-3xl sm:text-5xl lg:text-6xl">From wallet to pocket, in five steps</h2>
         </div>
         <div>
           {features.map((f) => (
@@ -233,21 +233,18 @@ function Download() {
   return (
     <section id="download" className="py-16 pb-24">
       <div className="max-w-2xl mx-auto px-6 sm:px-10">
-        <div className="rounded-[28px] border border-card-border bg-card text-center p-12">
+        <div className="rounded-[28px] border border-card-border bg-card text-center p-8 sm:p-12">
           <div className="w-16 h-16 rounded-2xl bg-pocket-green text-[#06140a] font-display font-bold text-2xl flex items-center justify-center mx-auto mb-6">
             P
           </div>
           <h2 className="font-semibold text-4xl mb-4">Get Pocketra</h2>
           <p className="text-text-soft text-lg mb-10">Start splitting your balance into pockets today. Free to use.</p>
-          <div className="flex flex-wrap gap-4 justify-center mb-6">
-            <a href="https://github.com/MKLNRD-ADR/pocketra/releases/latest/download/pocketra.apk"
-              download
-              className="flex flex-col items-start rounded-2xl border border-card-border bg-bg-soft px-8 py-4 min-w-[180px] hover:border-pocket-green transition"
-            >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+            <a href="https://github.com/MKLNRD-ADR/pocketra/releases/latest/download/pocketra.apk" download className="flex flex-col items-start rounded-2xl border border-card-border bg-bg-soft px-8 py-4 hover:border-pocket-green transition">
               <span className="text-xs text-text-faint">Download for</span>
               <span className="font-semibold text-xl">Android</span>
             </a>
-            <a href="#" className="flex flex-col items-start rounded-2xl border border-card-border bg-bg-soft px-8 py-4 min-w-[180px] opacity-55 pointer-events-none">
+            <a href="#" className="flex flex-col items-start rounded-2xl border border-card-border bg-bg-soft px-8 py-4 opacity-55 pointer-events-none">
               <span className="text-xs text-text-faint">Coming soon to</span>
               <span className="font-semibold text-xl">iOS</span>
             </a>
@@ -262,7 +259,7 @@ function Download() {
 function Footer() {
   return (
     <footer className="border-t border-card-border">
-      <div className="flex items-center justify-between w-full px-6 sm:px-10 py-10 text-text-faint text-sm">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 w-full px-6 sm:px-10 py-8 sm:py-10 text-text-faint text-sm">
         <span className="font-semibold text-text">Pocketra</span>
         <p>Copyright 2026 Pocketra. Built for people who think in pockets, not spreadsheets.</p>
       </div>
@@ -272,7 +269,7 @@ function Footer() {
 
 function App() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Navbar />
       <Hero />
       <HowItWorks />
